@@ -1,37 +1,38 @@
 import React from "react";
 import axios from "axios";
 import "./styles.css";
+import Iframe from "react-iframe";
+import io from "socket.io-client";
 
 export default class App extends React.Component {
-  state = {
-    users: [],
-  };
   componentDidMount() {
-    axios.get("/users.json").then((response) => {
-      this.setState({ users: response.data });
-    });
+    const domain = "meet.jit.si";
+    const options = {
+      roomName: "JitsiMeetAPIExample",
+      width: 700,
+      height: 700,
+      parentNode: document.querySelector("#meet"),
+    };
+    window.JitsiMeetExternalAPI =
+      window.JitsiMeetExternalAPI || window.exports.JitsiMeetExternalAPI;
+    const api = new window.JitsiMeetExternalAPI(domain, options);
+    // const socket = io("http://localhost:5000");
   }
-
   render() {
-    const { users } = this.state;
     return (
-      <div>
-        <ul className="users">
-          {users.map((user) => (
-            <li className="user">
-              <p>
-                <strong>Name:</strong> {user.name}
-              </p>
-              <p>
-                <strong>Email:</strong> {user.email}
-              </p>
-              <p>
-                <strong>City:</strong> {user.address.city}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <>
+        <div id="meet"></div>
+
+        <Iframe
+          url="https://wbo.ophir.dev/boards/lyt89huCrJUnu5uMQvGCsh8LRPxixshjYpsbz6F6-IY-"
+          width="450px"
+          height="450px"
+          id="myId"
+          className="myClassname"
+          display="initial"
+          position="relative"
+        />
+      </>
     );
   }
 }
