@@ -25,8 +25,8 @@ export default class App extends React.Component {
 
         <Iframe
           url="https://wbo.ophir.dev/boards/lyt89huCrJUnu5uMQvGCsh8LRPxixshjYpsbz6F6-IY-"
-          width="450px"
-          height="450px"
+          width="700px"
+          height="700px"
           id="myId"
           className="myClassname"
           display="initial"
