@@ -8,7 +8,7 @@ export default class App extends React.Component {
   componentDidMount() {
     const domain = "meet.jit.si";
     const options = {
-      roomName: "JitsiMeetAPIExample",
+      roomName: "JitsiMeetAPIExample1",
       width: 700,
       height: 700,
       parentNode: document.querySelector("#meet"),
