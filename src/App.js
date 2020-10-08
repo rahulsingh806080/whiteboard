@@ -98,7 +98,7 @@ export default class App extends React.Component {
             </div>
             <div className="column">
               <div className="green-column" ref={ref}>
-                <Iframe
+                {/* <Iframe
                   url={`https://cloud13.de/testwhiteboard/?whiteboardid=${abc}`}
                   width="900px"
                   height="600px"
@@ -106,8 +106,9 @@ export default class App extends React.Component {
                   className="myClassname"
                   display="initial"
                   position="relative"
-                />
+                /> */}
               </div>
+
               <div className="row">
                 <div className="pagecontainer">
                   <button className="add" onClick={this.addPage}>
@@ -120,6 +121,15 @@ export default class App extends React.Component {
                   </button>
                 </div>
                 <div className="pagecontainer">{pageno}</div>
+                {/* <Iframe
+                  url={`https://www.w3schools.com/`}
+                  width="900px"
+                  height="600px"
+                  id="myId1"
+                  className="myClassname"
+                  display="initial"
+                  position="relative"
+                /> */}
               </div>
             </div>
           </div>
